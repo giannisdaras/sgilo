@@ -1,0 +1,35 @@
+device: cuda
+N: 8
+heads: 1
+d_model: 1024
+patch_size: 1
+image_shape: [512, 8, 8]
+
+sde_type: VP_SDE
+
+# SDEs
+VP_SDE:
+  beta_min: 0.1
+  beta_max: 20
+  num_scales: 1000
+
+# sampling
+sampling:
+  sample_every: 100000000
+  predictor: 'euler_maruyama'
+  corrector: 'ald'
+  sampling_method: 'pc'
+  eps: 1e-3
+  snr: 0.0001
+  hot_steps: 1
+  prior_sampler: false
+  hot_sampler: true
+  rtol: 1e-5
+  atol: 1e-5
+  n_steps_each: 1
+  probability_flow: false
+  continuous: true
+  noise_removal: true
+  likelihood_weighting: true
+
+ckpt: './checkpoints/score_based/vp_sde/layer2.pth'

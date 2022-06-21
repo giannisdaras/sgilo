@@ -1,0 +1,30 @@
+device: cuda
+seed: 988
+sample_batch_size: 8
+total_batches: 100
+noise_mode: const
+different_samples: true
+
+
+arch:
+  z_dim: 512
+  w_dim: 512
+  c_dim: 0
+  img_resolution: 1024
+  img_channels: 3
+
+
+# Normalization values
+gen_min: -1.4007
+gen_max: 2.3453
+latent_min: -3.0592
+latent_max: 3.0290
+
+
+latent_conf: configs/trained_networks/latent.yaml
+gen_conf: configs/trained_networks/syn_layer3.yaml
+
+gen_ckpt: ./checkpoints/stylegan/ffhq.pt
+gaussian_fit: ./checkpoints/stylegan/gaussian_fit.pt
+
+

@@ -1,0 +1,94 @@
+model_type: stylegan
+comet_key: None  # replace with your own key to log results to comet_ml.
+seed: 280
+device: cuda
+batch_size: 1
+# Checkpoints
+gen_ckpt: ./checkpoints/stylegan/ffhq.pkl
+gaussian_fit: ./checkpoints/stylegan/gaussian_fit.pt
+
+
+operators:
+  operator_type: downsampler
+  forward_measurements: true
+  circulant:
+    m: null
+  downsampler:
+    factor: 16
+
+mapping_network: false
+
+
+geocross: 0.001
+mse: [1.0, 1.0, 1.0, 1.0]
+pe: [0.05, 0.05, 0.05, 0.05]
+
+# No score-based
+# latent_temperature: [0.0, 0.0, 0.0, 0.0]
+# gen_temperature: [0.0, 0.0, 0.0, 0.0]
+
+
+latent_temperature: [0.1, 0.1, 0.1, 0.1]
+gen_temperature: [0.0, 0.1, 0.1, 0.1]
+# how much noise to add to the updates of latent/gen. If 0.0, we have MAP.
+latent_noise_temp: 0.025
+gen_noise_temp: 0.025
+
+
+lr: [0.05, 0.05, 0.05, 0.05]
+project_latent: true
+project_noises: true
+noises_lookahead: 1
+# how many steps to run per layer
+steps: [300, 300, 300]
+# what to optimize in each layer
+vars: ['nlg', 'nlg', 'nlg', 'lg']
+
+
+# classifier used in LPIPS loss
+cls_name: vgg16
+
+# can be decreased for super-resolution
+image_size:
+  - 1024
+  - 1024
+
+
+## files
+gen_configs: [null, 'layer1.yaml', 'layer2.yaml', 'syn_layer3.yaml']
+latent_config: latent.yaml
+
+# gen_configs: [null, null, null, null, null, null, null]
+# latent_config: null
+
+input_folders: [images/]
+
+input_same_as_ref: false
+latents: null
+
+# logging
+previous_experiment: null
+x_steps: [1e2, 1e3, 5e3, 1e4, 5e4, 1e5, 1e6]
+experiment_tag: posterior_sampling
+save_latent: true
+save_images: true
+save_dataloader_every: 100000000
+
+
+
+# multiprocessing
+debug: true
+multiprocessing: False  # set to True for multihost.
+world_size: 1 # how many gpus
+port: '1999'
+
+# Normalization values
+gen_min: -1.4007
+gen_max: 2.3453
+latent_min: -3.0592
+latent_max: 3.0290
+
+
+
+# use CLIP to check if the solution of the inverse problem changes image attributes
+clip_texts: null

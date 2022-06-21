@@ -454,8 +454,9 @@ def open_url(url: str, cache_dir: str = None, num_attempts: int = 10, verbose: b
                 raise
             except:
                 if not attempts_left:
-                    if verbose:
-                        print(" failed")
+                    pass
+                    # if verbose:
+                    #     print(" failed")
                     raise
                 if verbose:
                     print(".", end="", flush=True)

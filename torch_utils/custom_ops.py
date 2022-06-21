@@ -106,8 +106,9 @@ def get_plugin(module_name, sources, **build_kwargs):
         module = importlib.import_module(module_name)
 
     except:
-        if verbosity == 'brief':
-            print('Failed!')
+        pass
+        # if verbosity == 'brief':
+        #     print('Failed!')
         raise
 
     _cached_plugins[module_name] = module

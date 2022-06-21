@@ -1,24 +1,21 @@
-<center> <h2> Score-Guided Intermediate Layer Optimization </h2> <h2> Fast Langevin Mixing for Inverse Problems </h2> </center> <hr>
+<center> <h2> Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems </h2> </center>
 
-This repo contains the official implementation for the paper: [Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems](https://arxiv.org/abs/4362205).
+
+This repo contains the official implementation for the paper: 
+[Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems](https://arxiv.org/abs/4362205).
 
 Authored by: [Giannis Daras](https://scholar.google.com/citations?user=LaScvbQAAAAJ&hl=en) (\*), [Yuval Dagan](https://scholar.google.co.il/citations?user=X91gWisAAAAJ&hl=en) (\*), [Alexandros G. Dimakis](https://scholar.google.com/citations?user=JSFmVQEAAAAJ&hl=en), [Constantinos Daskalakis](https://scholar.google.com/citations?user=iTv2cOgAAAAJ&hl=en)
 
 (\*): equal contribution.
 
 
-
-
-<!-- [![Colab Demo](https://camo.githubusercontent.com/52feade06f2fecbf006889a904d221e6a730c194/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667)](https://colab.research.google.com/drive/1aEiqtssQ66RHKsTmkMGRMNj8vnCKUldK?usp=sharing) -->
-
-
 --------------------
 We use diffusion models to regularize the solutions of GANs for inverse problems (e.g. inpainting, colorization, denoising, etc). 
 
-![](paper_figs/figure1.png)
+<div class="center"> <img src="paper_figs/figure1.png" alt="Figure 1"> </div>
 
 A GAN can be decomposed into multiple intermediate generators, e.g. $G_1, G_2$ as shown below.
-<div class="center">  <img src="paper_figs/figure2.png" alt="Figure 2"> </div>
+<div class="center">  
 
 $G_1$ typically has a low-dimensional input space which limits the expressitivity of the whole generator. 
 

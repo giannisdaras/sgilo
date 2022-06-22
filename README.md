@@ -2,7 +2,7 @@
 
 
 This repo contains the official implementation for the paper: 
-[Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems](https://arxiv.org/abs/4362205).
+[Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems](https://arxiv.org/abs/2206.09104).
 
 Authored by: [Giannis Daras](https://scholar.google.com/citations?user=LaScvbQAAAAJ&hl=en) (\*), [Yuval Dagan](https://scholar.google.co.il/citations?user=X91gWisAAAAJ&hl=en) (\*), [Alexandros G. Dimakis](https://scholar.google.com/citations?user=JSFmVQEAAAAJ&hl=en), [Constantinos Daskalakis](https://scholar.google.com/citations?user=iTv2cOgAAAAJ&hl=en)
 
@@ -130,7 +130,7 @@ Some important configuration values to adjust:
 If you find this work useful, please consider citing the following papers:
 
 ```bib
-@misc{daras2022score,
+@misc{daras_dagan_2022score,
     title={Score-Guided Intermediate Layer Optimization: Fast Langevin Mixing for Inverse Problems},
     author={Giannis Daras and Yuval Dagan, Alexandros G. Dimakis, Constantinos Daskalakis},
     year={2022},

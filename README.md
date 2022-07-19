@@ -15,13 +15,14 @@ We use diffusion models to regularize the solutions of GANs for inverse problems
 <div class="center"> <img src="paper_figs/figure1.png" alt="Figure 1"> </div>
 
 A GAN can be decomposed into multiple intermediate generators, e.g. $G_1, G_2$ as shown below.
-<div class="center">  
+<div class="center">  <img src="paper_figs/figure2.png" alt="Figure 2"> </div>
 
 $G_1$ typically has a low-dimensional input space which limits the expressitivity of the whole generator. 
 
 ILO [[1]](https://arxiv.org/abs/2102.07364), [[2]](https://github.com/giannisdaras/ilo) proposes to throw away $G_1$ (after training) and optimize over the input space of $G_2$, constrained in an $l_1$ expansion of the range of $G_1$. The set of potential solutions to an inverse problem is the green shaded area shown above.
 
-We argue that this handcrafted sparse prior can be replaced with a more powerful neural prior, coming from score-based/diffusion models. Specifically, we learn the distribution of latents in the input space of $G_2$ that correspond to natural images. In the figure, this is shown with the red level sets. We use the score network to regularize solutions of inverse problems in the input space of $G_2$.
+We argue that this handcrafted sparse prior can be replaced with a more powerful neural prior, coming from score-based/diffusion models. Specifically, we learn the distribution of latents in the input space of $G_2$ that correspond to natural images.     
+In the figure, this is shown with the red level sets. We use the score network to regularize solutions of inverse problems in the input space of $G_2$.
 
 
 
